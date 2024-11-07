@@ -7,7 +7,7 @@
 
 <BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="org.example.javafx2.Controller">
     <center>
-        <Canvas fx:id="canvas" width="600" height="400" style="-fx-background-color: lightgray;"/>
+        <Canvas fx:id="canvas" width="600" height="500" style="-fx-background-color: lightgray;"/>
     </center>
     <bottom>
         <VBox spacing="10" alignment="center">

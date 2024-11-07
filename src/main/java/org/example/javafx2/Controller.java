@@ -35,8 +35,8 @@ public class Controller {
     }
 
     private void drawRectangle() {
-        double width = random.nextDouble() * 5 + 10;
-        double height = random.nextDouble() * 5 + 20;
+        double width = random.nextDouble() * 50 + 20;
+        double height = random.nextDouble() * 50 + 20;
         Rectangle rectangle = new Rectangle(width, height);
         drawFigure(rectangle);
     }
@@ -50,9 +50,9 @@ public class Controller {
             double y = random.nextDouble() * (canvas.getHeight() - 2 * circle.area() / Math.PI);
             gc.fillOval(x, y, circle.area() / Math.PI * 2, circle.area() / Math.PI * 2);
         } else if (figure instanceof Rectangle rectangle) {
-            double x = random.nextDouble() * (canvas.getWidth() - rectangle.area());
-            double y = random.nextDouble() * (canvas.getHeight() - rectangle.area() / rectangle.area());
-            gc.fillRect(x, y, rectangle.area(), rectangle.area() / rectangle.area());
+            double x = random.nextDouble() * (canvas.getWidth() - rectangle.width());
+            double y = random.nextDouble() * (canvas.getHeight() - rectangle.height());
+            gc.fillRect(x, y, rectangle.width(), rectangle.height());
         }
     }
 
