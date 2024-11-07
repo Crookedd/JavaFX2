@@ -1,13 +1,16 @@
 package geometry2d;
 
+import javafx.scene.paint.Color;
+
 public class Circle implements Figure {
     private final double radius;
+    private double x;
+    private double y;
+    private Color color;
 
     public Circle(double radius) {
-        if (radius <= 0) {
-            throw new IllegalArgumentException("Радиус должен быть положительным числом.");
-        }
         this.radius = radius;
+        this.color = Color.BLACK; // Установим цвет по умолчанию
     }
 
     @Override
@@ -16,8 +19,33 @@ public class Circle implements Figure {
     }
 
     @Override
-    public String toString() {
-        return "Радиус: " + radius;
+    public double getX() {
+        return x;
+    }
+
+    @Override
+    public double getY() {
+        return y;
+    }
+
+    @Override
+    public void setX(double x) {
+        this.x = x;
+    }
+
+    @Override
+    public void setY(double y) {
+        this.y = y;
+    }
+
+    @Override
+    public Color getColor() {
+        return color;
+    }
+
+    @Override
+    public void setColor(Color color) {
+        this.color = color;
     }
 }
 
