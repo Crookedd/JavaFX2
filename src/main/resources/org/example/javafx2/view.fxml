@@ -5,16 +5,19 @@
 <?import javafx.scene.canvas.Canvas?>
 <?import javafx.scene.layout.VBox?>
 
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.ColorPicker?>
 <BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="org.example.javafx2.Controller">
-    <center>
-        <Canvas fx:id="canvas" width="600" height="500" style="-fx-background-color: lightgray;"/>
-    </center>
-    <bottom>
-        <VBox spacing="10" alignment="center">
+    <top>
+        <HBox alignment="center" style="-fx-padding: 10;">
+            <ColorPicker fx:id="colorPicker" />
             <Button fx:id="drawCircleButton" text="Нарисовать круг"/>
             <Button fx:id="drawRectangleButton" text="Нарисовать прямоугольник"/>
-        </VBox>
-    </bottom>
+        </HBox>
+    </top>
+    <center>
+        <Canvas fx:id="canvas" width="600" height="400" style="-fx-background-color: lightgray;"/>
+    </center>
 </BorderPane>
 
 

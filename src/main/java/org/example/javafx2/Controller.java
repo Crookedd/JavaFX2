@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
+import javafx.scene.control.ColorPicker;
 import javafx.scene.paint.Color;
 
 import java.util.Random;
@@ -19,6 +20,9 @@ public class Controller {
 
     @FXML
     private Button drawRectangleButton;
+
+    @FXML
+    private ColorPicker colorPicker;
 
     private final Random random = new Random();
 
@@ -43,7 +47,7 @@ public class Controller {
 
     private void drawFigure(geometry2d.Figure figure) {
         GraphicsContext gc = canvas.getGraphicsContext2D();
-        gc.setFill(randomColor());
+        gc.setFill(colorPicker.getValue()); // используем выбранный цвет
 
         if (figure instanceof Circle circle) {
             double x = random.nextDouble() * (canvas.getWidth() - 2 * circle.area() / Math.PI);
