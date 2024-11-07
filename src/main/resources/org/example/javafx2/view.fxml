@@ -6,24 +6,16 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.control.ColorPicker?>
 
-<?import javafx.scene.layout.StackPane?>
-<?import javafx.scene.layout.VBox?>
-
 <BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="org.example.javafx2.Controller">
     <top>
-        <HBox alignment="center" spacing="10" style="-fx-padding: 10; -fx-background-color: #f0f0f0;">
+        <HBox alignment="center" style="-fx-padding: 10;">
             <ColorPicker fx:id="colorPicker" />
-            <Button fx:id="drawCircleButton" text="Нарисовать круг" styleClass="button"/>
-            <Button fx:id="drawRectangleButton" text="Нарисовать прямоугольник" styleClass="button"/>
+            <Button fx:id="drawCircleButton" text="Нарисовать круг"/>
+            <Button fx:id="drawRectangleButton" text="Нарисовать прямоугольник"/>
         </HBox>
     </top>
     <center>
-        <StackPane>
-            <Canvas fx:id="canvas" width="700" height="500" style="-fx-background-color: light gray;"/>
-            <VBox style="-fx-padding: 5; -fx-background-color: transparent; -fx-border-color: #A9A9A9; -fx-border-width: 2;">
-                <StackPane style="-fx-background-color: white;"/>
-            </VBox>
-        </StackPane>
+        <Canvas fx:id="canvas" width="600" height="400" style="-fx-background-color: lightgray;"/>
     </center>
 </BorderPane>
 

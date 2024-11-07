@@ -36,15 +36,15 @@ public class Controller {
 
     @FXML
     public void initialize() {
-        drawCircleButton.setOnAction(event -> drawCircle());
-        drawRectangleButton.setOnAction(event -> drawRectangle());
-
         canvas.setOnMousePressed(this::handleMousePressed);
         canvas.setOnMouseDragged(this::handleMouseDragged);
         canvas.setOnMouseReleased(this::handleMouseReleased);
+        drawCircleButton.setOnAction(event -> drawCircle());
+        drawRectangleButton.setOnAction(event -> drawRectangle());
     }
 
     private void drawCircle() {
+        System.out.println("Draw Circle called");
         double radius = random.nextDouble() * 5 + 2; // случайный радиус от 10 до 60
         Circle circle = new Circle(radius);
         circle.setX(random.nextDouble() * (canvas.getWidth() - 2 * radius));
@@ -66,6 +66,7 @@ public class Controller {
     }
 
     private void drawAllFigures() {
+        System.out.println("Drawing all figures. Total figures: " + figures.size());
         GraphicsContext gc = canvas.getGraphicsContext2D();
         gc.clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
 
@@ -93,6 +94,7 @@ public class Controller {
 
 
     private void handleMousePressed(MouseEvent event) {
+        System.out.println("Mouse pressed at: " + event.getX() + ", " + event.getY());
         if (event.getButton() == MouseButton.PRIMARY) {
             for (int i = figures.size() - 1; i >= 0; i--) {
                 geometry2d.Figure figure = figures.get(i);
@@ -145,6 +147,7 @@ public class Controller {
     }
 
     private void moveFigure(geometry2d.Figure figure, double x, double y) {
+        System.out.println("мы меняем : ");
         figure.setX(x);
         figure.setY(y);
     }
@@ -152,5 +155,7 @@ public class Controller {
     private void changeFigureColor(geometry2d.Figure figure) {
         Color randomColor = Color.color(random.nextDouble(), random.nextDouble(), random.nextDouble());
         figure.setColor(randomColor);
+        drawAllFigures(); // Убедитесь, что это вызывается
+        System.out.println("мы  : ");
     }
 }
